@@ -21,19 +21,13 @@ class LocationBlock extends BlockBase {
   public function build() {
 	\Drupal::service('page_cache_kill_switch')->trigger();
 	$timeService = \Drupal::service('specbee_admin.time_service');
-	
 	$timeData = $timeService->getTime();
 	$city = $timeData['city'];
 	$country = $timeData['country'];
 	$timestamp = $timeData['timestamp'];
-	//\Drupal::logger('location')->notice(print_r($city));
 
     return [
       '#theme' => 'location_block',
-      '#active_tab' => 'some_string',
-      '#body_text' => [
-        '#markup' => "",
-      ],
       '#city' => $city,
       '#country' => $country,
       '#timestamp' => $timestamp,

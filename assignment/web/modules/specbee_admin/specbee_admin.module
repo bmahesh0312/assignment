@@ -11,8 +11,6 @@ function specbee_admin_theme($existing, $type, $theme, $path): array {
   return [
     'location_block' => [
       'variables' => [
-        'active_tab' => NULL,
-        'body_text' => NULL,
         'city' => NULL,
         'country' => NULL,
         'timestamp' => NULL,

@@ -21,12 +21,11 @@ class TimeService {
    * @return \Drupal\Component\Render\MarkupInterface|string
    */
   public function getTime() {
+	  //admin configuration
 	  $config = \Drupal::config('specbee_admin.settings');
+	  //formatting datetime according to timezone and format
 	  $time = \Drupal::service('date.formatter')->format(\Drupal::time()->getCurrentTime(),'specbee_date_format', $timezone = \Drupal::config('specbee_admin.settings')->get('timezone'), $langcode = NULL);
-	  $suffixes =["th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th",
-	  "th", "th", "th", "th", "th", "th", "th", "th", "th", "th",
-	  "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th",
-	  "th", "st"];
+	  $suffixes =["th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "th", "st", "nd", "rd", "th", "th", "th", "th", "th", "th", "th", "st"];
 	  $date  = substr($time,0,strpos($time," "));
 	  $date = $date . $suffixes[intval($date)];
 	  $date = $date . " " . substr($time,strpos($time," ")+1,);

@@ -13,9 +13,9 @@ function specbee_admin_theme($existing, $type, $theme, $path): array {
       'variables' => [
         'active_tab' => NULL,
         'body_text' => NULL,
-        '#city' => NULL,
-        '#country' => NULL,
-        '#timestamp' => NULL,
+        'city' => NULL,
+        'country' => NULL,
+        'timestamp' => NULL,
       ],
     ],
   ];
